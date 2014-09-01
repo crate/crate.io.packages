@@ -8,15 +8,12 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        # Deleting field 'Release.raw_data'
-        db.delete_column('packages_releasefile', 'url')
-
-
-    def backwards(self, orm):
-        # Adding field 'Release.raw_data'
         db.add_column('packages_releasefile', 'url',
                       self.gf('django.db.models.fields.URLField')(max_length=512, null=True, blank=True),
                       keep_default=False)
+
+    def backwards(self, orm):
+        db.delete_column('packages_releasefile', 'url')
 
 
     models = {
