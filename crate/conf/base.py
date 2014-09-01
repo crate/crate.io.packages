@@ -107,12 +107,12 @@ MIDDLEWARE_CLASSES = [
     "account.middleware.LocaleMiddleware",
 ]
 
-ROOT_URLCONF = "crateweb.root_urls"
-ROOT_HOSTCONF = "crateweb.hosts"
+ROOT_URLCONF = "crate.root_urls"
+ROOT_HOSTCONF = "crate.hosts"
 
 DEFAULT_HOST = "default"
 
-WSGI_APPLICATION = "crateweb.wsgi.application"
+WSGI_APPLICATION = "crate.wsgi.application"
 
 TEMPLATE_DIRS = [
     os.path.join(PROJECT_ROOT, "templates"),
@@ -191,7 +191,6 @@ INSTALLED_APPS = [
     "crate.web.utils",
     "crate.pypi",
 
-    "cmds",
 ]
 
 FIXTURE_DIRS = [
