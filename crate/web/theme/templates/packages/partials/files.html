@@ -11,7 +11,7 @@
   <tbody>
     {% for file in release_files %}
       <tr>
-        <td>{% if file.uri %}<a href="{{ file.uri }}" target="_blank">{{ file.filename|filename }}</a>{% else %}{{ file.filename|filename }}{% endif %}</td>
+        <td>{% if file.url %}<a href="{{ file.url }}" target="_blank">{{ file.filename|filename }}</a>{% else %}{{ file.filename|filename }}{% endif %}</td>
         <td>{{ file.get_type_display() }}</td>
         <td>{{ file.get_python_version_display() }}</td>
         <td>{{ file.created|date("DATE_FORMAT") }}</td>
