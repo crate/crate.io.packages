@@ -1,0 +1,21 @@
+{% extends "site_base.html" %}
+
+{% block head_title %}{{ gettext("Confirm Email") }}{% endblock %}
+
+{% block body %}
+  <div class="row">
+    <div class="span12">
+      <form method="post" class="form-horizontal">
+        {{ csrf() }}
+
+        <legend>{{ gettext("Confirm Email") }}</legend>
+        <fieldset>
+          <p>Confirm email address <b>{{ email }}</b>?</p>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">{{ gettext("Confirm") }}</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,16 @@
+<div class="pull-right">
+    <ul class="nav pull-right">
+      {% if request.user.is_authenticated() %}
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ request.user }} <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><i class="icon-user"></i> {{ gettext("Account") }}</li>
+            {% if user.is_staff %}<li><a href="{{ url("admin:index") }}"><i class="icon-cog"></i> {{ gettext("Admin") }}</a></li>{% endif %}
+            <li class="divider"></li>
+            <li><i class="icon-off"></i> {{ gettext("Log out") }}</li>
+          </ul>
+        </li>
+      {% else %}
+      {% endif %}
+    </ul>
+</div>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+  <head>
+    <meta charset="utf-8">
+
+    <title>{% block head_title_base %}{% endblock head_title_base %}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    {% block style_base %}
+      <link rel="stylesheet" href="{{ static("css/bootstrap.min.css") }}">
+      <link rel="stylesheet" href="{{ static("css/bootstrap-responsive.min.css") }}">
+
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+
+      {% if not debug %}
+      <link rel="stylesheet" href="{{ static("css/crate.css") }}">
+      {%- else -%}
+      <link rel="stylesheet/less" href="{{ static("less/crate.less") }}">
+
+      <script src="{{ static("js/lib/less-1.3.0.min.js") }}"></script>
+      {% endif %}
+
+      {% block extra_style %}{% endblock %}
+    {% endblock %}
+
+    <!--[if lt IE 9]>
+      <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    {#
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+    #}
+  </head>
+  <body class="{% block body_class %}body{% endblock %}" id="{% block body_id %}body{% endblock %}">
+    {% block topbar_base %}
+      <div class="navbar {% block navbar_class %}navbar-fixed-top{% endblock %}">
+        <div class="navbar-inner">
+          <div class="container">
+            {% block topbar %}
+              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </a>
+
+              {% block site_brand %}<a class="brand" href="{{ url("home") }}">Package Index</a>{% endblock %}
+
+              <div class="nav-collapse">
+                {% block nav %}
+                {% endblock %}
+
+                {% block account_bar %}
+                  {% include "_account_bar.html" %}
+                {% endblock %}
+              </div>
+            {% endblock %}
+          </div>
+        </div>
+      </div>
+    {% endblock %}
+
+    <div id="body-inner">
+      <div id="content-wrapper">
+        {% block body_base %}
+          <div class="container">
+            {% include "_messages.html" %}
+
+            {% block body %}
+            {% endblock %}
+          </div>
+        {% endblock %}
+      </div>
+      <div class="push"><!--//--></div>
+    </div>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="container">
+          {% include "_footer.html" %}
+        </div>
+      </div>
+    </footer>
+
+    {% block script_base %}
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+      <script src="{{ static("js/bootstrap.min.js") }}"></script>
+      <script src="{{ static("js/lib/fayer.js") }}"></script>
+      <script src="{{ static("js/ajaxCSRF.js") }}"></script>
+      <script src="{{ static("js/crate.js") }}"></script>
+      <!-- Google Analytics Start -->
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-46278040-1', 'auto');
+        ga('send', 'pageview');
+      </script>
+      <!-- Google Analytics End -->
+      <!-- Crate UDC -->
+      <script>
+      window.analytics=window.analytics||[],window.analytics.methods=["identify","group","track","page","pageview","alias","ready","on","once","off","trackLink","trackForm","trackClick","trackSubmit"],window.analytics.factory=function(t){return function(){var a=Array.prototype.slice.call(arguments);return a.unshift(t),window.analytics.push(a),window.analytics}};for(var i=0;i<window.analytics.methods.length;i++){var key=window.analytics.methods[i];window.analytics[key]=window.analytics.factory(key)}window.analytics.load=function(t){if(!document.getElementById("analytics-js")){var a=document.createElement("script");a.type="text/javascript",a.id="analytics-js",a.async=!0,a.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.io/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n)}},window.analytics.SNIPPET_VERSION="2.0.9",
+      window.analytics.load("vd4x4hv637");
+      (function(w,d,s,u){
+      var a=document.createElement(s); a.type="text/javascript", a.id='crate-utils', a.async=1, a.src=('https:'===document.location.protocol?'https:':'http:')+u;
+      var n=document.getElementsByTagName(s)[0]; n.parentNode.insertBefore(a,n);
+      })(window, document, 'script', '//cdn.crate.io/libs/crate/utils.js');
+      </script>
+      <!-- Crate UDC End -->
+
+      {% block extra_script %}{% endblock %}
+    {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,8 @@
+{% extends "site_base.html" %}
+
+{% block head_title %}{{ gettext("Already logged in") }}{% endblock %}
+
+{% block body %}
+  <h1>{{ gettext("Already logged in") }}</h1>
+  <p>You are already logged into the site. To login with a different OpenID please <a href="#">logout</a> first.
+{% endblock %}
