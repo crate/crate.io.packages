@@ -61,4 +61,5 @@ gunicorn==19.1
 six==1.7.3
 elasticsearch==1.1.1
 celery-haystack==0.4
+eventlet==0.9.16
 -e git+https://github.com/toastdriven/django-haystack.git#egg=django-haystack
