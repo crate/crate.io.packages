@@ -1,3 +1,13 @@
+.. note::
+
+  This repository hosts the code for the PyPI_ Mirror on `https://crate.io/packages/ <https://crate.io/packages/>`_.
+  It combines various repos from `https://github.com/crateio <https://github.com/crateio>`_
+  that are not actively maintained anymore.
+
+
+Below you can find the original README file:
+
+
 Crate
 =====
 

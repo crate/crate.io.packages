@@ -151,10 +151,8 @@ msgid ""
 "your documentation on Read The Docs is easy (even if it's just an additional"
 " copy), and it allows people who want to use your package the ability to "
 "locate your documentation in what is quickly becoming a one stop shop for "
-"online open source documentation.<br /><br /><small>If this says you aren't "
-"hosted on Read The Docs and you are please contact <a "
-"href='mailto:support@crate.io'>support@crate.io</a></small>"
-msgstr "La documentación puede ser una de las partes más importantes de cualquier libreria. Incluso más importante que solo tener documentación, es asegurarse de que la gente puede encontrarla fácilmente.<br /><br />Read The Docs es una plataforma de fuente abierta para alojar documentación generada por Sphinx.<br /><br />Alojar su documentación en Read The Docs es fácil (incluso si solo es una copia adicional), y hacerlo le permite a la gente que quiere usar su paquete localizar su documentación en lo que rápidamente se ha vuelto una tienda de una parada para documentación de fuente abierta en línea.<br /><br /><small>Si esto dice que usted no está alojado en Read The Docs y usted si lo está, por favor comuniquese a <a href='mailto:support@crate.io'>support@crate.io</a></small>"
+"online open source documentation."
+msgstr "La documentación puede ser una de las partes más importantes de cualquier libreria. Incluso más importante que solo tener documentación, es asegurarse de que la gente puede encontrarla fácilmente.<br /><br />Read The Docs es una plataforma de fuente abierta para alojar documentación generada por Sphinx.<br /><br />Alojar su documentación en Read The Docs es fácil (incluso si solo es una copia adicional), y hacerlo le permite a la gente que quiere usar su paquete localizar su documentación en lo que rápidamente se ha vuelto una tienda de una parada para documentación de fuente abierta en línea."
 
 #: crate/web/packages/evaluators.py:127
 msgid ""

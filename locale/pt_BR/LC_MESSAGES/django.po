@@ -152,9 +152,7 @@ msgid ""
 "your documentation on Read The Docs is easy (even if it's just an additional"
 " copy), and it allows people who want to use your package the ability to "
 "locate your documentation in what is quickly becoming a one stop shop for "
-"online open source documentation.<br /><br /><small>If this says you aren't "
-"hosted on Read The Docs and you are please contact <a "
-"href='mailto:support@crate.io'>support@crate.io</a></small>"
+"online open source documentation."
 msgstr ""
 
 #: crate/web/packages/evaluators.py:127

@@ -150,10 +150,8 @@ msgid ""
 "your documentation on Read The Docs is easy (even if it's just an additional"
 " copy), and it allows people who want to use your package the ability to "
 "locate your documentation in what is quickly becoming a one stop shop for "
-"online open source documentation.<br /><br /><small>If this says you aren't "
-"hosted on Read The Docs and you are please contact <a "
-"href='mailto:support@crate.io'>support@crate.io</a></small>"
-msgstr "문서는 라이브러리의 가장 중요한 부분 중 하나입니다. 하지만 그냥 문서가 있는 것보다 사람들이 그걸 쉽게 찾을 수 있도록 해주는 게 더 중요합니다.<br /><br />Read The Docs는 Sphinx로 작성된 문서를 올리기 위한 오픈 소스 플랫폼입니다.<br /><br />Read The Docs에 여러분의 문서를 올리는 것은 쉽습니다. (그냥 사본만 만드는 거라면요.) 그리고 그렇게 하면 여러분의 패키지를 쓰고 싶어하는 사람들이 온라인 오픈 소스 문서를 위한 대형 서점이 되어가는 곳에서 문서를 찾을 수 있게 됩니다.<br /><br /><small>혹시 Read The Docs에 올라오지 않았다고 잘못 나오고 있다면, 저희에게 <a href='mailto:support@crate.io'>support@crate.io</a>로 알려주세요.</small>"
+"online open source documentation."
+msgstr "문서는 라이브러리의 가장 중요한 부분 중 하나입니다. 하지만 그냥 문서가 있는 것보다 사람들이 그걸 쉽게 찾을 수 있도록 해주는 게 더 중요합니다.<br /><br />Read The Docs는 Sphinx로 작성된 문서를 올리기 위한 오픈 소스 플랫폼입니다.<br /><br />Read The Docs에 여러분의 문서를 올리는 것은 쉽습니다. (그냥 사본만 만드는 거라면요.) 그리고 그렇게 하면 여러분의 패키지를 쓰고 싶어하는 사람들이 온라인 오픈 소스 문서를 위한 대형 서점이 되어가는 곳에서 문서를 찾을 수 있게 됩니다."
 
 #: crate/web/packages/evaluators.py:127
 msgid ""
