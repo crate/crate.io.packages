@@ -4,6 +4,7 @@
 
 {% for list in user_lists %}
   {% if release.package in list.packages.all() %}
+    <!-- XXX modals are disabled
     <div class="modal fade" id="remove-from-list-{{ list.pk }}">
       <div class="modal-header">
         <button class="close" data-dismiss="modal">×</button>
@@ -27,9 +28,11 @@
         </div>
       </form>
     </div>
+    -->
   {% endif %}
 {% endfor %}
 
+<!-- XXX modals are disabled
 <div class="modal fade" id="add-to-new-list">
   <div class="modal-header">
     <button class="close" data-dismiss="modal">×</button>
@@ -51,3 +54,4 @@
     </div>
   </form>
 </div>
+-->

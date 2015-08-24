@@ -111,6 +111,19 @@ if "REDIS_URL" in os.environ:
     CELERY_REDIS_PORT = REDIS["default"]["PORT"]
     CELERY_REDIS_PASSWORD = REDIS["default"]["PORT"]
 
+if "ELASTICSEARCH_URL" in os.environ:
+    urlparse.uses_netloc.append("es")
+    url = urlparse.urlparse(os.environ["ELASTICSEARCH_URL"])
+
+    HAYSTACK_CONNECTIONS = {
+      "default": {
+        "ENGINE": "haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine",
+        "URL": "http://%s/" % (url.netloc),
+        "INDEX_NAME": url.path[1:],
+      },
+    }
+
+
 SITE_ID = 3
 
 SERVER_EMAIL = "server@crate.io"
