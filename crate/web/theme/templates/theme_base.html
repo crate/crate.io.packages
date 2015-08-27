@@ -50,10 +50,10 @@
               </a>
 
               {% block site_brand %}
-              <a class="brand" href="{{ url("home") }}">Package Index</a>
+              <a class="brand" href="{{ url("home") }}">Python Package Index</a>
               <span class="brand-subline">
                 provided by
-                <a onclick="ga('send','event','pipy header crate')" title="Crate: Your Elastic Data Store" href="https://crate.io/overview/">Crate.IO</a>
+                <a id="link_crate" title="Crate: The Scalable SQL Database" href="https://crate.io/overview/">Crate</a>
               </span>
               {% endblock %}
 
@@ -100,27 +100,32 @@
       <script src="{{ static("js/lib/fayer.js") }}"></script>
       <script src="{{ static("js/ajaxCSRF.js") }}"></script>
       <script src="{{ static("js/crate.js") }}"></script>
-      <!-- Google Analytics Start -->
-      <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-46278040-1', 'auto');
-        ga('send', 'pageview');
-      </script>
-      <!-- Google Analytics End -->
-      <!-- Crate UDC -->
-      <script>
-      window.analytics=window.analytics||[],window.analytics.methods=["identify","group","track","page","pageview","alias","ready","on","once","off","trackLink","trackForm","trackClick","trackSubmit"],window.analytics.factory=function(t){return function(){var a=Array.prototype.slice.call(arguments);return a.unshift(t),window.analytics.push(a),window.analytics}};for(var i=0;i<window.analytics.methods.length;i++){var key=window.analytics.methods[i];window.analytics[key]=window.analytics.factory(key)}window.analytics.load=function(t){if(!document.getElementById("analytics-js")){var a=document.createElement("script");a.type="text/javascript",a.id="analytics-js",a.async=!0,a.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.io/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n)}},window.analytics.SNIPPET_VERSION="2.0.9",
-      window.analytics.load("vd4x4hv637");
-      (function(w,d,s,u){
-      var a=document.createElement(s); a.type="text/javascript", a.id='crate-utils', a.async=1, a.src=('https:'===document.location.protocol?'https:':'http:')+u;
-      var n=document.getElementsByTagName(s)[0]; n.parentNode.insertBefore(a,n);
-      })(window, document, 'script', '//cdn.crate.io/libs/crate/utils.js');
-      </script>
-      <!-- Crate UDC End -->
 
+      <!-- Segment -->
+      <script>
+        !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","group","track","ready","alias","page","once","off","on","setAnonymousId"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.0.1";
+          analytics.load("vd4x4hv637");
+          analytics.setAnonymousId($.cookie('uid'));
+          analytics.page();
+          analytics.track('visited_section_pypi');
+        }}();
+      </script>
+      <!-- @end Segment -->
+      <script>
+        // track links to main site
+        var link_crate       = document.getElementById('link_crate');
+        var link_montypython = document.getElementById('link_montypython');
+        var link_python      = document.getElementById('link_python');
+        var link_try_footer  = document.getElementById('link_try_footer');
+        var link_try_sidebar = document.getElementById('link_try_sidebar');
+        var link_history     = document.getElementById('link_history');
+        analytics.trackLink(link_crate,       'clicked_link_pypi', { detail: 'header-crate'});
+        analytics.trackLink(link_montypython, 'clicked_link_pypi', { detail: 'footer-montypython'});
+        analytics.trackLink(link_python,      'clicked_link_pypi', { detail: 'footer-python'});
+        analytics.trackLink(link_try_footer,  'clicked_link_pypi', { detail: 'footer-try'});
+        analytics.trackLink(link_try_sidebar, 'clicked_link_pypi', { detail: 'sidebar-try'});
+        analytics.trackLink(link_history,     'clicked_link_pypi', { detail: 'footer-history'});
+      </script>
       {% block extra_script %}{% endblock %}
     {% endblock %}
   </body>

@@ -36,7 +36,7 @@ jingo==0.4
 kombu==2.1.8
 lxml==2.3.4
 mimeparse==0.1.3
-newrelic==1.2.1.265
+newrelic==1.13.1.31
 oauth2==1.5.211
 oauthlib==0.1.3
 pinax-utils==1.0b1.dev3
@@ -63,3 +63,4 @@ elasticsearch==1.1.1
 celery-haystack==0.4
 eventlet==0.9.16
 -e git+https://github.com/toastdriven/django-haystack.git#egg=django-haystack
+supervisor==3.1.3

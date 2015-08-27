@@ -9,6 +9,8 @@ jutils.ji18n.translate.patch()
 
 from crate.web.search.views import Search
 from crate.web.packages.views import ReleaseDetail
+from crate.web.packages.simple.views import Sitemap
+
 
 handler500 = "pinax.views.server_error"
 
@@ -20,6 +22,8 @@ urlpatterns = patterns("",
     url(r"^externally-hosted/$", "crate.web.packages.views.fuck_the_status_quo"),
     url(r"^(?P<package>[^/]+)/(?:(?P<version>[^/]+)/)?$", ReleaseDetail.as_view(), name="package_detail"),
     url(r"^", include("crate.web.search.urls")),
+
+    url(r"^sitemap.xml$", Sitemap.as_view(), name="simple_sitemap"),
 )
 
 

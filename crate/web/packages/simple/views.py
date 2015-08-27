@@ -38,6 +38,19 @@ class PackageIndex(ListView):
         return qs
 
 
+class Sitemap(PackageIndex):
+
+    template_name = "packages/simple/sitemap.html"
+    paginate_by = 50000
+
+    # return xml
+    def render_to_response(self, context, **response_kwargs):
+        return super(Sitemap, self).render_to_response(
+            context,
+            content_type='application/xml',
+            **response_kwargs)
+
+
 class PackageDetail(DetailView):
 
     restricted = False
